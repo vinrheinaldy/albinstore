@@ -110,11 +110,13 @@ Aplikasi bisa diakses dengan URL yang kamu pilih!
 
 # Bagan request client dan responsnya
 
-taro gambar disini jgn lupa ya :)
+![alt text](bagan1.png)
 
 ## Penjelasan
 
-penjelasan bagan disini yak
+ 1. User melakukan HTTP request yang ditangani oleh View: URL yang diminta oleh user diproses melalui urls.py, yang menentukan function View di views.py yang akan dijalankan.
+ 2. View me-request data dari Model: Function View akan mengambil data yang diperlukan dari model di models.py berdasarkan data field yang telah ditentukan.
+ 3. View me-request Template yang dipopulasikan data: Berdasarkan function View, berkas HTML tertentu akan dipilih dari Template, kemudian View mengirimkan HTML yang sudah diisi data tersebut sebagai HTTP response kepada user.
 
 # Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
