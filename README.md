@@ -1,6 +1,6 @@
 # albinstore
 
-https://malvin-rheinaldy-albinstore.pbp.cs.ui.ac.id/
+https://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/
 
 
 ## Bagaimana cara mengimplementasi Tugas
