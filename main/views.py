@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+def show_main(request):
+    context = {
+        'name_aplikasi': 'albinstore',
+        'name': 'Alvin',
+        'npm' : '2306275866',
+        'class': 'PBP D'
+    }
+
+    return render(request, "main.html", context)
