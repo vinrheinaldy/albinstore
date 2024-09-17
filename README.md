@@ -3,6 +3,9 @@
 https://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/
 
 
+<details>
+<summary> <b> Tugas 2: Implementasi Model-View-Template (MVT) pada Django </b> </summary>
+   
 ## Bagaimana cara mengimplementasi Tugas
 
 ### 1. Cara membuat Repositori baru
@@ -130,4 +133,19 @@ Django dijadikan permulaan pembelajaran karena mudah dipelajari, terstruktur, me
 # Mengapa model pada Django disebut sebagai ORM?
 
 Karena memungkinkan programmer untuk berinteraksi dengan basis data menggunakan Python, sehingga data yang disimpan di tabel-tabel basis data relasional dapat diakses dan dimanipulasi seolah-olah mereka adalah objek dalam kode, tanpa perlu menulis query SQL secara langsung.
+
+</details>
+
    
+<details>
+<summary> <b> Tugas 3: ... </b> </summary>
+### abcd
+Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+   
+Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+
+Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+
+Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
