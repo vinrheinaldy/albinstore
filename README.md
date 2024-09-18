@@ -138,7 +138,7 @@ Karena memungkinkan programmer untuk berinteraksi dengan basis data menggunakan 
 
    
 <details>
-<summary> <b> Tugas 3: ... </b> </summary>
+<summary> <b> Tugas 3: Implementasi Form dan Data Delivery pada Django </b> </summary>
 ### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
    
 Dalam proses mengimplementasi sebuah platform data delivery sangatlah penting dikarenakan data delivery ini adalah hal penting dari komunikasi antar komponen dalam sistem dan interaksi dengan pengguna. Selain itu data delivery digunakan juga untuk memastikan aliran data yang konsisten, optimasi performa sistem, menjaga keamanan pengguna.
@@ -362,13 +362,13 @@ git push pws master
    ![alt text](images/xml.png)
 
 2. XML by id
-   ![alt_text](images/xml[id].png
+   ![alt_text](images/xml-id.png)
 
 3. JSON
    ![alt_text](images/json.png)
 
 4. JSON by id
-   ![alt_text](images/json[id].png
+   ![alt_text](images/json_id.png)
    
    
    
