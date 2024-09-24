@@ -113,7 +113,7 @@ Aplikasi bisa diakses dengan URL yang kamu pilih!
 
 # Bagan request client dan responsnya
 
-![alt text](bagan1.png)
+![alt text](images/bagan1.png)
 
 ## Penjelasan
 
