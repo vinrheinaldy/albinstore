@@ -139,6 +139,7 @@ Karena memungkinkan programmer untuk berinteraksi dengan basis data menggunakan 
    
 <details>
 <summary> <b> Tugas 3: Implementasi Form dan Data Delivery pada Django </b> </summary>
+   
 ### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
    
 Dalam proses mengimplementasi sebuah platform data delivery sangatlah penting dikarenakan data delivery ini adalah hal penting dari komunikasi antar komponen dalam sistem dan interaksi dengan pengguna. Selain itu data delivery digunakan juga untuk memastikan aliran data yang konsisten, optimasi performa sistem, menjaga keamanan pengguna.
