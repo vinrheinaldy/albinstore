@@ -374,7 +374,7 @@ git push pws master
 </details>
    
 <details>
-<summary> <b> Tugas 4: ... </b> </summary>
+<summary> <b> Tugas 4: Implementasi Autentikasi, Session, dan Cookies pada Django </b> </summary>
 
 ### Apa perbedaan antara HttpResponseRedirect() dan redirect()
    
