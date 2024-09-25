@@ -371,8 +371,22 @@ git push pws master
 4. JSON by id
    ![alt_text](images/json_id.png)
    
+</details>
    
-   
+<details>
+<summary> <b> Tugas 4: ... </b> </summary>
+
+### Apa perbedaan antara HttpResponseRedirect() dan redirect()
    
 
-   
+| Format       | HttpsResponseRedirect()                                                                 | redirect()                                                           |
+|--------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| Perbandingan |Membuat respons pengalihan manual ke URL tertentu. |  Shortcut yang lebih pintar untuk pengalihan ke URL, view, atau model. |
+| Sintaks      | `HttpResponseRedirect('/some/url/')`                                                  | `redirect('/some/url/')`  atau `redirect('view_name')`
+
+   Secara ringkas HttpResponseRedirect() digunakan untuk pengalihan manual yang hanya menerima URL, sedangkan redirect() lebih fleksibel karena dapat menerima URL, view name, atau model instance dan lebih sering digunakan di Django karena kemudahannya.
+
+
+### Jelaskan cara kerja penghubungan model Product dengan User!
+
+Menghubungkan model Product dan User dapat dilakukan dengan ForeignKey(Relasi one-to-many). Hubungan one-to-many berarti satu pengguna dapat memiliki banyak produk, tetapi setiap produk hanya dimiliki oleh satu pengguna. Kita dapat menggunakan ForeignKey untuk ini. 
