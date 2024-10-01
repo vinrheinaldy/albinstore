@@ -15,6 +15,6 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('edit_product/<uuid:id>/', edit_product_entry, name='edit_product'),
-    path('dalete_product/<uuid:id>/', hapus_product_entry, name='delete_product'),
+    path('delete_product/<uuid:id>/', hapus_product_entry, name='delete_product'),
 
 ]
