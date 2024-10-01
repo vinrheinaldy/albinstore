@@ -10,6 +10,7 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
+from django.utils.timezone import now
 
 
 @login_required(login_url='/login')
@@ -89,3 +90,25 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def edit_product_entry(request, id):
+    product_entry = Product.objects.get(pk=id)
+    form = ProductEntryForm(request.POST or None, instance=product_entry)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return redirect('main:show_main')
+
+    context = {'form': form}
+    return render(request, "edit_product_entry.html", context)
+
+def hapus_product_entry(request, id):
+    product_entry = Product.objects.get(pk=id)
+    product_entry.delete()
+    return redirect('main:show_main')
+    
+def your_view(request):
+    context = {
+        'timestamp': now().timestamp(),
+    }
+    return render(request, 'main.html', context)

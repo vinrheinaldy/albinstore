@@ -1,0 +1,62 @@
+{% load static %}
+
+<nav class="bg-indigo-800 text-white">
+  <!-- Desktop Navbar -->
+  <div class="hidden md:flex items-center px-6 py-4">
+    <a href="{% url 'main:show_main' %}" class="text-xl font-bold">albinstore</a>
+    <div class="flex-1 flex justify-center space-x-4">
+      <a href="{% url 'main:show_main' %}" class="hover:text-gray-300">Home</a>
+      <a href="{% url 'main:create_product_entry' %}" class="hover:text-gray-300">Products</a>
+      <a href="#" class="hover:text-gray-300">Categories</a>
+      <a href="#" class="hover:text-gray-300">Cart</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      {% if user.is_authenticated %}
+        <span>Welcome, {{ name }}</span>
+        <a href="{% url 'main:logout' %}" class="bg-purple-800 px-4 py-2 rounded hover:bg-purple-700">
+          Logout
+        </a>
+      {% else %}
+        <a href="{% url 'main:login' %}" class="hover:text-gray-300">Login</a>
+        <a href="{% url 'main:register' %}" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+          Register
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Mobile Navbar -->
+  <div class="md:hidden" x-data="{ isOpen: false }">
+    <div class="flex justify-between items-center px-4 py-3">
+      <a href="{% url 'main:show_main' %}" class="text-xl font-bold">albinstore</a>
+      <button @click="isOpen = !isOpen" class="p-2">
+        <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg x-show="isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div x-show="isOpen" class="px-4 pt-2 pb-4 space-y-2">
+      <a href="{% url 'main:show_main' %}" class="block py-2 hover:text-gray-300">Home</a>
+      <a href="{% url 'main:create_product_entry' %}" class="block py-2 hover:text-gray-300">Products</a>
+      <a href="#" class="block py-2 hover:text-gray-300">Categories</a>
+      <a href="#" class="block py-2 hover:text-gray-300">Cart</a>
+      
+      {% if user.is_authenticated %}
+        <div class="py-2">Welcome, {{ name }}</div>
+        <a href="{% url 'main:logout' %}" class="block py-2 text-purple-800 hover:text-purple-700">
+          Logout
+        </a>
+      {% else %}
+        <a href="{% url 'main:login' %}" class="block py-2 hover:text-gray-300">Login</a>
+        <a href="{% url 'main:register' %}" class="block py-2 text-blue-500 hover:text-blue-400">
+          Register
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

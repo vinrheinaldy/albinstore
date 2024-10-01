@@ -5,8 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block meta %} {% endblock meta %}
+    <style>
+      body{
+        background-image: url("{% static 'image/test.png' %}"); /* Pastikan lintasan gambar benar */
+        background-size: cover; /* Menyesuaikan ukuran gambar agar mencakup seluruh halaman */
+        background-position: center; /* Memposisikan gambar di tengah */
+        background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+        height: 125vh;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
   </head>
-
   <body>
     {% block content %} {% endblock content %}
   </body>
