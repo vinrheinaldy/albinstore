@@ -652,7 +652,7 @@ Padding adalah ruang di dalam border elemen, antara konten elemen dan border. Pa
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
-#### Implementasikan fungsi untuk menghapus dan mengedit product.
+### Implementasikan fungsi untuk menghapus dan mengedit product.
 
 1. Pertama yang saya lakukan adalah buka `main/views.py` lalu menambahkan function baru bernama `edit_product_entry` yang berisi:
 ```
@@ -745,18 +745,18 @@ def edit_product_entry(request, id):
       </a>
     </div>
 ```
-#### Kustomisasi halaman login, register, dan tambah product semenarik mungkin.
+### Kustomisasi halaman login, register, dan tambah product semenarik mungkin.
 - Melakukan penambahan background
 - Mengganti warna/design font
 - Mengganti warna tombol
 
-#### Jika pada aplikasi belum ada product yang tersimpan, halaman daftar product akan menampilkan gambar dan pesan bahwa belum ada product yang terdaftar.
+### Jika pada aplikasi belum ada product yang tersimpan, halaman daftar product akan menampilkan gambar dan pesan bahwa belum ada product yang terdaftar.
 Saya memberikan foto orang sedih dan memberi teks.
 
-#### Jika sudah ada product yang tersimpan, halaman daftar product akan menampilkan detail setiap product dengan menggunakan card (tidak boleh sama persis dengan desain pada Tutorial!).
+### Jika sudah ada product yang tersimpan, halaman daftar product akan menampilkan detail setiap product dengan menggunakan card (tidak boleh sama persis dengan desain pada Tutorial!).
 Saya mengedit cardnya untuk menjadi unik, dan mengikuti tema website saya.
 
-#### Untuk setiap card product, buatlah dua buah button untuk mengedit dan menghapus product pada card tersebut!
+### Untuk setiap card product, buatlah dua buah button untuk mengedit dan menghapus product pada card tersebut!
 
 Untuk mengaplikasikan kedua tersebut kedalam aplikasi bukalah `product_card.html` lalu tambahkan kode berikut:
 ```
@@ -774,7 +774,7 @@ Untuk mengaplikasikan kedua tersebut kedalam aplikasi bukalah `product_card.html
     </div>
 ```
 
-#### Buatlah navigation bar (navbar) untuk fitur-fitur pada aplikasi yang responsive terhadap perbedaan ukuran device, khususnya mobile dan desktop.
+### Buatlah navigation bar (navbar) untuk fitur-fitur pada aplikasi yang responsive terhadap perbedaan ukuran device, khususnya mobile dan desktop.
 
 1.Pada `templates` yang berada pada root directory buat file html baru bernama `navbar.html` lalu saya beri isi:
 ```
