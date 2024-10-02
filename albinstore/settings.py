@@ -136,4 +136,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/", "https://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/", "https://malvin-rheinaldy-albinstoree.pbp.cs.ui.ac.id/"]
