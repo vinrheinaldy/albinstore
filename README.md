@@ -841,7 +841,7 @@ Untuk mengaplikasikan kedua tersebut kedalam aplikasi bukalah `product_card.html
 </details>
 
 <details>
-<summary> <b> Tugas 6: ... </b> </summary>
+<summary> <b> Tugas 6: JavaScript dan AJAX </b> </summary>
 
 
 1. Kita akan membuat API untuk mengambil data Product dengan mengganti field data menjadi `data = Product.objects.filter(user=request.user)` pada fungsi `show_json()` dan `show_xml()` pada `views.py`
