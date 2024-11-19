@@ -11,6 +11,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.utils.timezone import now
+from django.views.decorators.csrf import csrf_exempt
+import json
+from django.http import JsonResponse
 
 
 @login_required(login_url='/login')
@@ -112,3 +115,22 @@ def your_view(request):
         'timestamp': now().timestamp(),
     }
     return render(request, 'main.html', context)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+        new_product = Product.objects.create(
+            user=request.user,
+            name=data["nama_produk"],
+            price=int(data["harga"]),
+            stock=int(data["stock"]),
+            description=data["deskripsi"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
