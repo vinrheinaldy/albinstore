@@ -839,3 +839,68 @@ Untuk mengaplikasikan kedua tersebut kedalam aplikasi bukalah `product_card.html
 2. Namun saya edit beberapa agar lebih mirip dengan tema website saya.
 
 </details>
+
+<details>
+<summary> <b> Tugas 6: JavaScript dan AJAX </b> </summary>
+
+
+1. Kita akan membuat API untuk mengambil data Product dengan mengganti field data menjadi `data = Product.objects.filter(user=request.user)` pada fungsi `show_json()` dan `show_xml()` pada `views.py`
+
+2. Tambahkan fungsi berikut di `main.html` untuk mengambil product data menggunakan AJAX `GET`, serta implementasi juga `refreshProductEntries`
+   ```
+   async function getProductEntries(){
+   return fetch("{% url 'main:show_json' %}").then((res) => res.json());
+   }
+   ```
+3. Tambahkan Button baru untuk menggunakan AJAX `POST`
+```
+<button data-modal-target="crudModal" data-modal-toggle="crudModal" class="bg-[#6A9AB0] hover:bg-[#5C869A] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" onclick="showModal();">
+   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+   </svg>
+   Add New Product Entry by <span class="text-red-500">AJAX</span>
+ </button>
+```
+4. Buatlah modal form di `main.html` untuk button yang dibuat pada langkah sebelumnya
+5. implementasikan fungsi AJAX `POST` dengan `addProductEntry()` di `main.html` menggunakan <script>
+```
+function addProductEntry() {
+   fetch("{% url 'main:add_product_entry_ajax' %}", {
+     method: "POST",
+     body: new FormData(document.querySelector('#productEntryForm')),
+   })
+   .then(response => refreshProductEntries());
+
+   document.getElementById("productEntryForm").reset(); 
+   document.querySelector("[data-modal-toggle='crudModal']").click();
+   hideModal();
+
+   return false;
+   }
+```
+6. Pada `views.py` implementasikan `create_product_entry_ajax()` untuk menangani product menggunakan AJAX `POST` , sebelum fungsi tersebut tambahkan 2 baris berikut agar Django tidak perlu mengecek keberadaan CSRF token pada `POST` request, lalu routing ke `urls.py`
+```
+ @csrf_exempt
+ @require_POST
+ ```
+7. Agar bisa refresh berterus, pada fungsi `addProductEntry()` kita tambahkan pemanggilan `refreshProductEntry()` 
+
+
+ ### Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+
+ JavaScript memungkinkan interaktivitas dan responsivitas halaman web tanpa perlu melakukan reload. Dengan JavaScript, kita dapat melakukan manipulasi DOM, menjalankan AJAX requests untuk komunikasi asinkronus, dan memberikan pengalaman pengguna yang dinamis.
+
+### Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+
+`await` digunakan untuk menunggu hasil dari `fetch()` yang mengembalikan Promise. Dengan await, JavaScript akan menjeda eksekusi kode hingga data dari server diterima. Jika kita tidak menggunakan await, JavaScript akan melanjutkan eksekusi kode sebelum data selesai diambil, sehingga dapat menyebabkan error karena data belum siap.
+
+### Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+
+`csrf_exempt` digunakan untuk mengecualikan mekanisme CSRF protection pada sebuah view yang menerima POST request dari AJAX. AJAX request biasanya tidak menyertakan CSRF token secara otomatis, sehingga jika tidak di-exempt, permintaan POST akan ditolak oleh Django sebagai tindakan keamanan.
+
+### ada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+
+Frontend validation bisa dimanipulasi oleh pengguna yang berniat jahat, sehingga kita tetap membutuhkan backend validation untuk memastikan data yang diterima server adalah bersih dan aman.
+
+</details>
+
